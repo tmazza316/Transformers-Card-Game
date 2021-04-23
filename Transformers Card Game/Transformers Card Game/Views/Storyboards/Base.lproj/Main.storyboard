@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAL-iV-dK1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Collection View Controller-->
+        <scene sceneID="nps-Ku-gmh">
+            <objects>
+                <collectionViewController id="crF-uo-Cac" customClass="CardCollectionViewController" customModule="Transformers_Card_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="afa-xT-VpR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OdY-AN-5Hg">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell" id="ybq-0M-sYw" customClass="CharacterCollectionViewCell" customModule="Transformers_Card_Game" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d3F-b3-rGg">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zHy-Sc-kSW">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="zHy-Sc-kSW" secondAttribute="height" id="51N-wM-q9G"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zHy-Sc-kSW" firstAttribute="leading" secondItem="d3F-b3-rGg" secondAttribute="leading" id="S8s-lK-27r"/>
+                                        <constraint firstItem="zHy-Sc-kSW" firstAttribute="top" secondItem="d3F-b3-rGg" secondAttribute="top" id="nVl-hh-eqn"/>
+                                        <constraint firstAttribute="bottom" secondItem="zHy-Sc-kSW" secondAttribute="bottom" id="rnZ-WO-WBZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="zHy-Sc-kSW" secondAttribute="trailing" id="tmx-aQ-SVo"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="tmx-aQ-SVo"/>
+                                        </mask>
+                                    </variation>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="characterImageView" destination="zHy-Sc-kSW" id="7m2-sr-sQM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="crF-uo-Cac" id="M4P-VB-Puk"/>
+                            <outlet property="delegate" destination="crF-uo-Cac" id="QBx-6z-foG"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="FKY-dU-ncC">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="Z3V-gC-rnB">
+                            <connections>
+                                <segue destination="r1v-fj-tW3" kind="presentation" identifier="toCharacterVC" id="Ynf-7k-2cT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNc-M6-eNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114.4927536231885" y="146.65178571428569"/>
+        </scene>
+        <!--Choice View Controller-->
+        <scene sceneID="AXY-35-6Iy">
+            <objects>
+                <viewController id="r1v-fj-tW3" customClass="ChoiceViewController" customModule="Transformers_Card_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OjY-it-l3G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="yGp-2P-jGT">
+                                <rect key="frame" x="65" y="134" width="285" height="574.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-FO-8uE">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
+                                        <state key="normal" image="autobots"/>
+                                        <connections>
+                                            <action selector="autobotButtonTapped:" destination="r1v-fj-tW3" eventType="touchUpInside" id="K9r-GG-wHf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKO-pU-zT9">
+                                        <rect key="frame" x="0.0" y="381" width="285" height="193.5"/>
+                                        <state key="normal" image="decepticon"/>
+                                        <connections>
+                                            <action selector="decepticonButtonTapped:" destination="r1v-fj-tW3" eventType="touchUpInside" id="vBu-7S-6bh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UdB-9f-ZRk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SzA-FO-8uE" firstAttribute="centerY" secondItem="UdB-9f-ZRk" secondAttribute="centerY" id="fJJ-um-kkm"/>
+                            <constraint firstItem="SzA-FO-8uE" firstAttribute="centerX" secondItem="UdB-9f-ZRk" secondAttribute="centerX" id="q9q-B3-qgL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEs-CK-sUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="147"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0uK-h3-7D5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hAL-iV-dK1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mRd-es-3uP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="crF-uo-Cac" kind="relationship" relationship="rootViewController" id="hRx-W9-ciz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCW-x0-oLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="146.65178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="autobots" width="285" height="285"/>
+        <image name="decepticon" width="186" height="193.5"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
